@@ -22,4 +22,7 @@ RUN mkdir -p $PHP_CONFIG_TEMPLATE \
        $PHP_CONFIG_TEMPLATE \
     && chmod 755 $PHP_CONFIG_TEMPLATE
 
+RUN chmod 755 -R laravel
+RUN chmod -R o+w laravel/storage
+
 CMD sh /app/docker/startup.sh
