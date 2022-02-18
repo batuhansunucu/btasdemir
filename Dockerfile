@@ -26,9 +26,6 @@ RUN apt-get update && apt-get install -y \
     libmemcached-dev \
     nginx
 
-# Install supervisor
-RUN apt-get install -y supervisor
-
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -44,11 +41,6 @@ COPY --chown=www:www-data . /var/www
 
 # add root to www group
 RUN chmod -R ug+w /var/www/storage
-
-# Copy nginx/php/supervisor configs
-RUN cp docker/supervisor.conf /etc/supervisord.conf
-RUN cp docker/php.ini /usr/local/etc/php/conf.d/app.ini
-RUN cp docker/nginx.conf /etc/nginx/sites-enabled/default
 
 # PHP Error Log Files
 RUN mkdir /var/log/php
