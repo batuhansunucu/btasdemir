@@ -1,10 +1,10 @@
 <?php
-
+echo "hamza1";
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
-
+echo "hamza2";
 /*
 |--------------------------------------------------------------------------
 | Check If Application Is Under Maintenance3
@@ -19,7 +19,7 @@ define('LARAVEL_START', microtime(true));
 if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
     require __DIR__.'/../storage/framework/maintenance.php';
 }
-
+echo "hamza3";
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader1
@@ -32,7 +32,7 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
 */
 
 require __DIR__.'/../vendor/autoload.php';
-
+echo "hamza4";
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -45,7 +45,7 @@ require __DIR__.'/../vendor/autoload.php';
 */
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
-
+echo "hamza5";
 $kernel = $app->make(Kernel::class);
 
 $response = tap($kernel->handle(
@@ -53,3 +53,4 @@ $response = tap($kernel->handle(
 ))->send();
 
 $kernel->terminate($request, $response);
+echo "hamza6";
