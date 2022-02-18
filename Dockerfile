@@ -18,8 +18,6 @@ RUN chown -R www-data: /app
 ENV PHP_CONFIG_TEMPLATE=/laravel/storage
 
 RUN mkdir -p $PHP_CONFIG_TEMPLATE \
-	&& chown -R www-data.www-data \
-       $PHP_CONFIG_TEMPLATE \
     && chmod 755 $PHP_CONFIG_TEMPLATE
     
 CMD sh /app/docker/startup.sh
