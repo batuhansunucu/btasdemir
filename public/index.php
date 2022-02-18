@@ -1,545 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Infinite Loop - Bootstrap 4.0 HTML Template</title>
-    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
-    <link rel="stylesheet" href="slick/slick.css">
-    <link rel="stylesheet" href="slick/slick-theme.css">
-    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
-<!--
-Tooplate 2117 Infinite Loop
-https://www.tooplate.com/view/2117-infinite-loop
--->
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
 
-  </head>
-  <body>    
-    <!-- Hero section -->
-    <section id="infinite" class="text-white tm-font-big tm-parallax">
-      <!-- Navigation -->
-      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">              
-        <div class="container">   
-          <div class="tm-next">
-              <a href="#infinite" class="navbar-brand">M. Batuhan Taşdemir</a>
-          </div>             
-            
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars navbar-toggler-icon"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#infinite">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#whatwedo">What We Do</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link tm-nav-link" href="#testimonials">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#gallery">Gallery</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#contact">Contact</a>
-              </li>                    
-            </ul>
-          </div>        
-        </div>
-      </nav>
-      
-      <div class="text-center tm-hero-text-container">
-        <div class="tm-hero-text-container-inner">
-            <h2 class="tm-hero-title">Infinite Loop</h2>
-            <p class="tm-hero-subtitle">
-              Hamza DURAK
-              <br>Hamza Durak
-            </p>
-        </div>        
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">M. <span class="w3-hide-small">BATUHAN</span> TAŞDEMİR</span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>I love photography</em></p>
+  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
+      <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+  </div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">14+</span><br>
+    Partners
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">55+</span><br>
+    Projects Done
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">89+</span><br>
+    Happy Clients
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">150+</span><br>
+    Meetings
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">MY WORK</h3>
+  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">WHERE I WORK</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
       </div>
-
-      <div class="tm-next tm-intro-next">
-        <a href="#whatwedo" class="text-center tm-down-arrow-link">
-          <i class="fas fa-2x fa-arrow-down tm-down-arrow"></i>
-        </a>
-      </div>      
-    </section>
-
-    <section id="whatwedo" class="tm-section-pad-top">
-      
-      <div class="container">
-
-            <div class="row tm-content-box"><!-- first row -->
-                <div class="col-lg-12 col-xl-12">
-                    <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4 tm-section-title">What We Do</h2>
-                        <p class="mb-4 tm-intro-text">
-                          This is Infinite Loop, free Bootstrap 4.0 HTML template with a parallax effect. This layout is what you can modify and use for your websites. Please spread a word to your friends about our website. Thank you for supporting us. If you have any question, you can contact us or chat with us on our <a href="https://fb.com/tooplate">Tooplate Facebook page</a>.</p>
-                    </div>
-                </div>
-
-            </div><!-- first row -->
-            
-            <div class="row tm-content-box"><!-- second row -->
-        		<div class="col-lg-1">
-                    <i class="far fa-3x fa-chart-bar text-center tm-icon"></i>
-                </div>
-                <div class="col-lg-5">
-                    <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4">Market Analysis</h2>
-                        <p class="mb-4 tm-intro-text">
-                          Praesent sed pharetra lorem, blandit convallis mi. Aenean ornare elit ac metus lacinia, sed iaculis nibh semper. Pellentesque est urna.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-1">
-                    <i class="far fa-3x fa-comment-alt text-center tm-icon"></i>
-                </div>
-                <div class="col-lg-5">
-                    <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4">Fast Support</h2>
-                        <p class="mb-4 tm-intro-text">
-                          Credit goes to <a rel="nofollow" href="https://www.pexels.com">Pexels</a> website for all images used in this template. Cras condimentum mi et sapien dignissim luctus.</p>
-                    </div>
-                </div>
-
-            </div><!-- second row -->
-            
-            <div class="row tm-content-box"><!-- third row -->
-        		<div class="col-lg-1">
-                    <i class="fas fa-3x fa-fingerprint text-center tm-icon"></i>
-                </div>
-                <div class="col-lg-5">
-                    <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4">Top Security</h2>
-                        <p class="mb-4 tm-intro-text">
-                      You have <strong>no</strong> authority to post this template as a ZIP file on your template collection websites. You can <strong>use</strong> this template for your commercial websites.</p>
-                          
-                          <div class="tm-continue">
-                            <a href="#testimonials" class="tm-intro-text tm-btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-1">
-                    <i class="fas fa-3x fa-users text-center tm-icon"></i>
-                </div>
-                <div class="col-lg-5">
-                    <div class="tm-intro-text-container">
-                      <h2 class="tm-text-primary mb-4">Social Work</h2>
-                        <p class="mb-4 tm-intro-text">
-                      You can change <a href="https://fontawesome.com/icons?d=gallery">Font Awesome icons</a> by either <b><em>fas or far</em></b> in the HTML codes. For Examples:<br>
-                      <em>&lt;i class=&quot;fas fa-users&quot;&gt;&lt;i class=&quot;far fa-chart-bar&quot;&gt;</em> </p>
-                          
-                          <div class="tm-continue">
-                            <a href="#testimonials" class="tm-intro-text tm-btn-primary">Details</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- third row -->
-
-        </div>
-      
-    </section>
-    
-    <section id="testimonials" class="tm-section-pad-top tm-parallax-2">      
-      <div class="container tm-testimonials-content">
-        <div class="row">
-          <div class="col-lg-12 tm-content-box">
-            <h2 class="text-white text-center mb-4 tm-section-title">Testimonials</h2>
-            <p class="mx-auto tm-section-desc text-center">
-                Nulla dictum sem non eros euismod, eu placerat tortor lobortis. Suspendisse id velit eu libero pellentesque interdum. Etiam quis congue eros.
-              </p>
-            <div class="mx-auto tm-gallery-container tm-gallery-container-2">
-              <div class="tm-testimonials-carousel">
-                <figure class="tm-testimonial-item">
-                  <img src="img/testimonial-img-01.jpg" alt="Image" class="img-fluid mx-auto">
-                  <blockquote>This background image includes a semi-transparent overlay layer. This section also has a parallax image effect.</blockquote>
-                  <figcaption>Catherine Win (Designer)</figcaption>
-                </figure>
-
-                <figure class="tm-testimonial-item">
-                  <img src="img/testimonial-img-02.jpg" alt="Image" class="img-fluid mx-auto">
-                  <blockquote>Testimonial section comes with carousel items. You can use Infinite Loop HTML CSS template for your websites.</blockquote>
-                  <figcaption>Dual Rocker (CEO)</figcaption>
-                </figure>
-
-                <figure class="tm-testimonial-item">
-                  <img src="img/testimonial-img-03.jpg" alt="Image" class="img-fluid mx-auto">
-                  <blockquote>Nulla finibus ligula nec tortor convallis tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</blockquote>
-                  <figcaption>Sandar Soft (Marketing)</figcaption>
-                </figure>
-
-                <figure class="tm-testimonial-item">
-                  <img src="img/testimonial-img-04.jpg" alt="Image" class="img-fluid mx-auto">
-                  <blockquote>Curabitur rutrum pharetra lobortis. Pellentesque vehicula, velit quis eleifend fermentum, erat arcu aliquet neque.</blockquote>
-                  <figcaption>Oliva Htoo (Designer)</figcaption>
-                </figure>
-
-                <figure class="tm-testimonial-item">
-                  <img src="img/testimonial-img-02.jpg" alt="Image" class="img-fluid mx-auto">
-                  <blockquote>Integer sit amet risus et erat imperdiet finibus. Nam lacus nunc, vulputate id ex eget, euismod auctor augue.</blockquote>
-                  <figcaption>Jacob Joker (CTO)</figcaption>
-                </figure>
-              </div>
-            </div>
+      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
           </div>
         </div>
-      </div>
-      <div class="tm-bg-overlay"></div>
-    </section>
-    
-    <section id="gallery" class="tm-section-pad-top">
-      <div class="container tm-container-gallery">
-        <div class="row">
-          <div class="text-center col-12">
-              <h2 class="tm-text-primary tm-section-title mb-4">Gallery</h2>
-              <p class="mx-auto tm-section-desc">
-                Praesent sed pharetra lorem, blandit convallis mi. Aenean ornare elit ac metus lacinia, sed iaculis nibh semper. Pellentesque est urna, lobortis eu arcu a, aliquet tristique urna.
-              </p>
-          </div>            
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="mx-auto tm-gallery-container">
-                    <div class="grid tm-gallery">
-                      <a href="img/gallery-img-01.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-01.jpg" alt="Image 1" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Physical Health <span>Exercise!</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/gallery-img-02.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-02.jpg" alt="Image 2" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Rain on Glass <span>Second Image</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/gallery-img-03.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-03.jpg" alt="Image 3" class="img-fluid">
-                          <figcaption>
-                            <h2><i><span>Sea View</span> Mega City</i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/gallery-img-04.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-04.jpg" alt="Image 4" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Dream Girl <span>Thoughts</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/gallery-img-05.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-05.jpg" alt="Image 5" class="img-fluid">
-                          <figcaption>
-                            <h2><i><span>Workstation</span> Offices</i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/gallery-img-06.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-06.jpg" alt="Image 6" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Just Above <span>The City</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/gallery-img-01.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-01.jpg" alt="Image 7" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Another <span>Exercise Time</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <a href="img/gallery-img-02.jpg">
-                        <figure class="effect-honey tm-gallery-item">
-                          <img src="img/gallery-tn-02.jpg" alt="Image 8" class="img-fluid">
-                          <figcaption>
-                            <h2><i>Repeated <span>Image Spot</span></i></h2>
-                          </figcaption>
-                        </figure>
-                      </a>
-                    </div>
-                </div>                
-            </div>        
-          </div>
-      </div>
-    </section>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
-    <!-- Contact -->
-    <section id="contact" class="tm-section-pad-top tm-parallax-2">
-    
-      <div class="container tm-container-contact">
-        
-        <div class="row">
-            
-            <div class="text-center col-12">
-                <h2 class="tm-section-title mb-4">Contact Us</h2>
-                <p class="mb-5">
-                  Proin enim orci, tincidunt quis suscipit in, placerat nec est. Vestibulum posuere faucibus posuere. Quisque aliquam velit eget leo blandit egestas. Nulla id posuere felis, quis tristique nulla.
-                </p><br>
-            </div>
-            
-            <div class="col-sm-12 col-md-6">
-              <form action="" method="get">
-                <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
-                <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
-                <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
-                <button type="submit" class="btn tm-btn-submit">Submit</button>
-              </form>
-            </div>
-            
-            <div class="col-sm-12 col-md-6">
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
 
-                <div class="contact-item">
-                  <a rel="nofollow" href="https://www.tooplate.com/contact" class="item-link">
-                      <i class="far fa-2x fa-comment mr-4"></i>
-                      <span class="mb-0">Chat Online</span>
-                  </a>              
-                </div>
-                
-                <div class="contact-item">
-                  <a rel="nofollow" href="mailto:mail@company.com" class="item-link">
-                      <i class="far fa-2x fa-envelope mr-4"></i>
-                      <span class="mb-0">mail@company.com</span>
-                  </a>              
-                </div>
-                
-                <div class="contact-item">
-                  <a rel="nofollow" href="https://www.google.com/maps" class="item-link">
-                      <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
-                      <span class="mb-0">Our Location</span>
-                  </a>              
-                </div>
-                
-                <div class="contact-item">
-                  <a rel="nofollow" href="tel:0100200340" class="item-link">
-                      <i class="fas fa-2x fa-phone-square mr-4"></i>
-                      <span class="mb-0">255-662-5566</span>
-                  </a>              
-                </div>
-                
-                <div class="contact-item">&nbsp;</div>
-            
-            </div>
-            
-            
-        </div><!-- row ending -->
-        
-      </div>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
 
-      	<footer class="text-center small tm-footer">
-          <p class="mb-0">
-          Copyright &copy; 2020 Company Name 
-          
-          . <a rel="nofollow" href="https://www.tooplate.com" title="HTML templates">Designed by TOOPLATE</a></p>
-        </footer>
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
 
-    </section>
-    
-    <script src="js/jquery-1.9.1.min.js"></script>     
-    <script src="slick/slick.min.js"></script>
-    <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="js/easing.min.js"></script>
-    <script src="js/jquery.singlePageNav.min.js"></script>     
-    <script src="js/bootstrap.min.js"></script> 
-    <script>
-
-      function getOffSet(){
-        var _offset = 450;
-        var windowHeight = window.innerHeight;
-
-        if(windowHeight > 500) {
-          _offset = 400;
-        } 
-        if(windowHeight > 680) {
-          _offset = 300
-        }
-        if(windowHeight > 830) {
-          _offset = 210;
-        }
-
-        return _offset;
-      }
-
-      function setParallaxPosition($doc, multiplier, $object){
-        var offset = getOffSet();
-        var from_top = $doc.scrollTop(),
-          bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
-        $object.css({"background-position" : bg_css });
-      }
-
-      // Parallax function
-      // Adapted based on https://codepen.io/roborich/pen/wpAsm        
-      var background_image_parallax = function($object, multiplier, forceSet){
-        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        var $doc = $(document);
-        // $object.css({"background-attatchment" : "fixed"});
-
-        if(forceSet) {
-          setParallaxPosition($doc, multiplier, $object);
-        } else {
-          $(window).scroll(function(){          
-            setParallaxPosition($doc, multiplier, $object);
-          });
-        }
-      };
-
-      var background_image_parallax_2 = function($object, multiplier){
-        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        var $doc = $(document);
-        $object.css({"background-attachment" : "fixed"});
-        
-        $(window).scroll(function(){
-          if($(window).width() > 768) {
-            var firstTop = $object.offset().top,
-                pos = $(window).scrollTop(),
-                yPos = Math.round((multiplier * (firstTop - pos)) - 186);              
-
-            var bg_css = 'center ' + yPos + 'px';
-
-            $object.css({"background-position" : bg_css });
-          } else {
-            $object.css({"background-position" : "center" });
-          }
-        });
-      };
-      
-      $(function(){
-        // Hero Section - Background Parallax
-        background_image_parallax($(".tm-parallax"), 0.30, false);
-        background_image_parallax_2($("#contact"), 0.80);   
-        background_image_parallax_2($("#testimonials"), 0.80);   
-        
-        // Handle window resize
-        window.addEventListener('resize', function(){
-          background_image_parallax($(".tm-parallax"), 0.30, true);
-        }, true);
-
-        // Detect window scroll and update navbar
-        $(window).scroll(function(e){          
-          if($(document).scrollTop() > 120) {
-            $('.tm-navbar').addClass("scroll");
-          } else {
-            $('.tm-navbar').removeClass("scroll");
-          }
-        });
-        
-        // Close mobile menu after click 
-        $('#tmNav a').on('click', function(){
-          $('.navbar-collapse').removeClass('show'); 
-        })
-
-        // Scroll to corresponding section with animation
-        $('#tmNav').singlePageNav({
-          'easing': 'easeInOutExpo',
-          'speed': 600
-        });        
-        
-        // Add smooth scrolling to all links
-        // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-        $("a").on('click', function(event) {
-          if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 600, 'easeInOutExpo', function(){
-              window.location.hash = hash;
-            });
-          } // End if
-        });
-
-        // Pop up
-        $('.tm-gallery').magnificPopup({
-          delegate: 'a',
-          type: 'image',
-          gallery: { enabled: true }
-        });
-
-        $('.tm-testimonials-carousel').slick({
-          dots: true,
-          prevArrow: false,
-          nextArrow: false,
-          infinite: false,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 2
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2
-              }
-            }, 
-            {
-              breakpoint: 480,
-              settings: {
-                  slidesToShow: 1
-              }                 
-            }
-          ]
-        });
-
-        // Gallery
-        $('.tm-gallery').slick({
-          dots: true,
-          infinite: false,
-          slidesToShow: 5,
-          slidesToScroll: 2,
-          responsive: [
-          {
-            breakpoint: 1199,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>
