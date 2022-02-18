@@ -1,6 +1,6 @@
-FROM php:8.0-fpm
+FROM php:7.4-alpine
 
-# Set working directory
+# Set working directorysssssss
 WORKDIR /var/www
 
 # Add docker php ext repo
@@ -31,10 +31,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Add user for laravel application
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy code to /var/www
 COPY --chown=www:www-data . /var/www
