@@ -1,13 +1,8 @@
-FROM php:7.4-fpm-alpine
+FROM php:7.4-fpm
 
-RUN apk add --no-cache nginx wget
+USER root
 
-RUN mkdir -p /run/nginx
-
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-
-RUN mkdir -p /app
-
+WORKDIR /var/www
 # Install dependencies
 RUN apt-get update \
 	&& apt-get install -y libmagickwand-dev --no-install-recommends \
@@ -66,7 +61,13 @@ RUN apt-get update && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && \
     apt-get update -y && \
     apt-get install google-cloud-sdk -y \
+RUN apk add --no-cache nginx wget
 
+RUN mkdir -p /run/nginx
+
+COPY docker/nginx.conf /etc/nginx/nginx.conf
+
+RUN mkdir -p /app
 COPY . /app
 
 RUN sh -c "wget http://getcomposer.org/composer.phar && chmod a+x composer.phar && mv composer.phar /usr/local/bin/composer"
@@ -75,5 +76,4 @@ RUN cd /app && \
 
 RUN chown -R www-data: /app
 
-EXPOSE 80
-RUN ["chmod", "+x", "app/docker/startup.sh"]
+CMD sh /app/docker/startup.sh
