@@ -15,14 +15,11 @@ RUN cd /app && \
 
 RUN chown -R www-data: /app
 
-ENV PHP_CONFIG_TEMPLATE=/usr/local/etc/php
+ENV PHP_CONFIG_TEMPLATE=/laravel/storage
 
 RUN mkdir -p $PHP_CONFIG_TEMPLATE \
 	&& chown -R www-data.www-data \
        $PHP_CONFIG_TEMPLATE \
     && chmod 755 $PHP_CONFIG_TEMPLATE
-
-RUN chmod 755 -R laravel
-RUN chmod -R o+w laravel/storage
-
+    
 CMD sh /app/docker/startup.sh
