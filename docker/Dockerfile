@@ -17,4 +17,7 @@ RUN chown -R www-data: /app
 
 CMD sh /app/docker/startup.sh
 
+chmod 755 -R DIRECTORY_NAME
+chmod -R o+w DIRECTORY_NAME/storage
+
 EXPOSE 80
