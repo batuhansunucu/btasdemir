@@ -15,9 +15,11 @@ RUN cd /app && \
 
 RUN chown -R www-data: /app
 
-RUN mkdir -p Laravel \
+ENV PHP_CONFIG_TEMPLATE=/usr/local/etc/php
+
+RUN mkdir -p $PHP_CONFIG_TEMPLATE \
 	&& chown -R www-data.www-data \
-       Laravel \
-    && chmod 755 Laravel
+       $PHP_CONFIG_TEMPLATE \
+    && chmod 755 $PHP_CONFIG_TEMPLATE
 
 CMD sh /app/docker/startup.sh
