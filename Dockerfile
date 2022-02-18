@@ -1,50 +1,20 @@
-FROM php:7.4-alpine
+FROM php:7.4-fpm-alpine
 
-# Set working directorysssssss
-WORKDIR /var/www
+RUN apk add --no-cache nginx wget
 
-# Add docker php ext repo
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN mkdir -p /run/nginx
 
-# Install php extensions
-RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
-    install-php-extensions mbstring pdo_mysql zip exif pcntl gd memcached
+COPY docker/nginx.conf /etc/nginx/nginx.conf
 
-# Install dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
-    zip \
-    jpegoptim optipng pngquant gifsicle \
-    unzip \
-    git \
-    curl \
-    lua-zlib-dev \
-    libmemcached-dev \
-    nginx
+RUN mkdir -p /app
+COPY . /app
 
-# Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN sh -c "wget http://getcomposer.org/composer.phar && chmod a+x composer.phar && mv composer.phar /usr/local/bin/composer"
+RUN cd /app && \
+    /usr/local/bin/composer install --no-dev
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN chown -R www-data: /app
 
-# Copy code to /var/www
-COPY --chown=www:www-data . /var/www
-
-# add root to www group
-RUN chmod -R ug+w /var/www/storage
-
-# PHP Error Log Files
-RUN mkdir /var/log/php
-RUN touch /var/log/php/errors.log && chmod 777 /var/log/php/errors.log
-
-# Deployment steps
-RUN composer install --optimize-autoloader --no-dev
-RUN chmod +x /var/www/docker/run.sh
+CMD sh /app/docker/startup.sh
 
 EXPOSE 80
-ENTRYPOINT ["/var/www/docker/run.sh"]
