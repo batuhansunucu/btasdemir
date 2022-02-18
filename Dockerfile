@@ -15,4 +15,9 @@ RUN cd /app && \
 
 RUN chown -R www-data: /app
 
+RUN mkdir -p Laravel \
+	&& chown -R www-data.www-data \
+       Laravel \
+    && chmod 755 Laravel
+
 CMD sh /app/docker/startup.sh
