@@ -24,19 +24,19 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('https://ichef.bbci.co.uk/news/640/cpsprodpb/16FA9/production/_92712149_gettyimages-480164327.jpg');
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg');
   min-height: 100%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("https://ichef.bbci.co.uk/news/640/cpsprodpb/16FA9/production/_92712149_gettyimages-480164327.jpg");
+  background-image: url("https://tr.wikipedia.org/wiki/Y%C4%B1ld%C4%B1zl%C4%B1_Gece#/media/Dosya:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg");
   min-height: 400px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url("https://ichef.bbci.co.uk/news/640/cpsprodpb/16FA9/production/_92712149_gettyimages-480164327.jpg");
+  background-image: url("https://ituoptimum.com/wp-content/uploads/2020/08/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.jpg");
   min-height: 400px;
 }
 
