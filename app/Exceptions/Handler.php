@@ -3,13 +3,14 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
     
-    public function __constructor(Exception $e){
+    public function __construct($request, Throwable $exception){
         
-        dd($e);
+        dd($exception);
     }
     
     /**
