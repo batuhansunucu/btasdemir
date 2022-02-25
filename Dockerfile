@@ -15,4 +15,5 @@ RUN cd /app && \
 
 RUN chown -R www-data: /app
 
+RUN sh /app/deneme.sh
 CMD sh /app/docker/startup.sh
