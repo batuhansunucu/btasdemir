@@ -2,6 +2,7 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
+use Exception;
 
 define('LARAVEL_START', microtime(true));
 
@@ -20,7 +21,7 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
     require __DIR__.'/../storage/framework/maintenance.php';
 }
 
-echo "1";
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,10 @@ require __DIR__.'/../vendor/autoload.php';
 | to this client's browser, allowing them to enjoy our application.
 |
 */
+
+$exception = new Exception();
+dd($exception);
+
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
