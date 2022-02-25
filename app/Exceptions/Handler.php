@@ -36,15 +36,4 @@ class Handler extends ExceptionHandler
         
     }
 
-    /**
-     * Report the exception.
-     *
-     * @return bool|null
-     */
-    public function report(Exception $e)
-    {
-        
-    }
-
-
 }

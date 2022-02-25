@@ -20,6 +20,8 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
     require __DIR__.'/../storage/framework/maintenance.php';
 }
 
+echo "1";
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
