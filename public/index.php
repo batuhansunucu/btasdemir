@@ -2,7 +2,6 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
-use Exception;
 
 define('LARAVEL_START', microtime(true));
 
@@ -48,8 +47,6 @@ require __DIR__.'/../vendor/autoload.php';
 */
 
 $exception = new Exception();
-dd($exception);
-
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
