@@ -8,6 +8,6 @@ while ! nc -w 1 -z 127.0.0.1 9000; do sleep 0.1; done;
 
 nginx
 
-cp .env.example .env
+cd /app cp .env.example .env
 
-php artisan key:generate
+cd /app php artisan key:generate
