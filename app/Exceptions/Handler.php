@@ -8,7 +8,7 @@ use Throwable;
 class Handler extends ExceptionHandler
 {
     
-    public function __construct($request, Throwable $exception){
+    public function __construct(Throwable $exception){
         
         dd($exception);
     }
