@@ -33,7 +33,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        dd(1);
+        
     }
 
 
