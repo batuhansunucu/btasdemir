@@ -7,12 +7,6 @@ use Exception;
 
 class Handler extends ExceptionHandler
 {
-    
-    public function __construct(Exception $exception){
-        
-        dd($exception);
-    }
-    
     /**
      * A list of the exception types that are not reported.
      *
@@ -39,7 +33,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        // 
+        dd(1);
     }
 
 
