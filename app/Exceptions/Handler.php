@@ -6,6 +6,12 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
+    
+    public function __constructor(Exception $e){
+        
+        dd($e);
+    }
+    
     /**
      * A list of the exception types that are not reported.
      *
@@ -34,4 +40,6 @@ class Handler extends ExceptionHandler
     {
         //
     }
+
+
 }
