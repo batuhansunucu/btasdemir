@@ -43,7 +43,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        print_r($e);
+        
     }
 
 
