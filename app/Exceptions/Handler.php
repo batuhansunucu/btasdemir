@@ -25,27 +25,13 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-
-
     /**
-     * Report the exception.
+     * Register the exception handling callbacks for the application.
      *
-     * @return bool|null
+     * @return void
      */
-    public function report($request, Throwable $exception)
+    public function register()
     {
-        dd($exception);
+        //
     }
- 
-    /**
-     * Render the exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Throwable $exception)
-    {
-        dd($exception);
-    }
-
 }
